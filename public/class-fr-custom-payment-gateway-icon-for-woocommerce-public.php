@@ -99,5 +99,38 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/fr-custom-payment-gateway-icon-for-woocommerce-public.js', array( 'jquery' ), $this->version, false );
 
 	}
+        
+        /**
+         * Change the icon.
+         * 
+         * Hooked on `woocommerce_gateway_icon` filter.
+         * 
+         * @since 1.0.0
+         * 
+         * @param string $icon  Payment gateway icon image.
+         * @param string $id    Payment gateway ID.
+         * @return string
+         */
+        public function modify_icon($icon = '', $id = '') {
+            if (!$id) {
+                return $icon;
+            }
+            
+            $payment_gateways = WC()->payment_gateways()->payment_gateways();
+            
+            if (!isset($payment_gateways[$id])) {
+                return $icon;
+            }
+            
+            /* @var $payment_gateway WC_Payment_Gateway */
+            $payment_gateway    = $payment_gateways[$id]; 
+            $custom_icon        = $payment_gateway->get_option('fcpgifw_icon');
+            
+            if (!$custom_icon) {
+                return $icon;
+            }
+            
+            return '<img src="' . WC_HTTPS::force_https_url(esc_url($custom_icon)) . '" alt="' . esc_attr( $payment_gateway->get_title() ) . '" />';
+        }
 
 }

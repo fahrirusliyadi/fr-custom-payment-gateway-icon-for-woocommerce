@@ -171,6 +171,8 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce {
 
 //		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 //		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+                
+                $this->loader->add_filter('woocommerce_gateway_icon', $plugin_public, 'modify_icon', 20, 2);
 
 	}
 
