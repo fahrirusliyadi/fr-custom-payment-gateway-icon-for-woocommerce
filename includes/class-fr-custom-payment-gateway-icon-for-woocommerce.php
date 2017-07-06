@@ -153,6 +153,8 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce {
 
 //		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 //		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+                
+                $this->loader->add_action('init', $plugin_admin, 'hook_form_fields_modifier');
 
 	}
 
