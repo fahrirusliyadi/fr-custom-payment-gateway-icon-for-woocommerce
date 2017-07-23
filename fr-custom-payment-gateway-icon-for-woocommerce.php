@@ -14,11 +14,11 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Fr Custom Payment Gateway Icon for WooCommerce
- * Plugin URI:        http://example.com
+ * Plugin URI:        
  * Description:       Add or change payment gateway icons that appear on the WooCommerce checkout page.
  * Version:           1.0.0
  * Author:            Fahri Rusliyadi
- * Author URI:        http://example.com
+ * Author URI:        https://profiles.wordpress.org/fahrirusliyadi
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       fr-custom-payment-gateway-icon-for-woocommerce
