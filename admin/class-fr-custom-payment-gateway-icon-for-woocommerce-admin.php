@@ -151,6 +151,7 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Admin {
                 'type'        => 'text',
                 'description' => __( 'Enter an image URL to change the icon.', 'fr-custom-payment-gateway-icon-for-woocommerce' ),
                 'desc_tip'    => true,
+                'default'     => '',
             );
             
             return $form_fields;
