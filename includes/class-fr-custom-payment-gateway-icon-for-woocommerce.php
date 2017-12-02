@@ -68,8 +68,8 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'fr-custom-payment-gateway-icon-for-woocommerce';
-		$this->version = '1.0.0';
+		$this->plugin_name  = 'fr-custom-payment-gateway-icon-for-woocommerce';
+                $this->version      = FR_CUSTOM_PAYMENT_GATEWAY_ICON_FOR_WOOCOMMERCE_VERSION;
 
 		$this->load_dependencies();
 		$this->set_locale();
