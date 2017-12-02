@@ -71,52 +71,6 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Admin {
                 return $this->add_icon_form_field($id, $arguments[0]);
             }
         }
-
-        /**
-	 * Register the stylesheets for the admin area.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_styles() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/fr-custom-payment-gateway-icon-for-woocommerce-admin.css', array(), $this->version, 'all' );
-
-	}
-
-	/**
-	 * Register the JavaScript for the admin area.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/fr-custom-payment-gateway-icon-for-woocommerce-admin.js', array( 'jquery' ), $this->version, false );
-
-	}
         
         /**
          * Hook form field modifier.
@@ -141,9 +95,9 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Admin {
          * Hooked on `woocommerce_settings_api_form_fields_$id`. The dynamic 
          * portion of the hook name, `$id`, refers to the payment gateway ID.
          * 
-         * @param   string $id
-         * @param   array $form_fields
-         * @return  array
+         * @param   string $id          Payment gateway ID.
+         * @param   array $form_fields  Form option fields.
+         * @return  array               Modified form option fields.
          */
         public function add_icon_form_field($id, $form_fields) {
             $form_fields['fcpgifw_icon'] = array(

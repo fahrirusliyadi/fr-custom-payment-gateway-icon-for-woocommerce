@@ -31,27 +31,6 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * The code that runs during plugin activation.
- * This action is documented in includes/class-fr-custom-payment-gateway-icon-for-woocommerce-activator.php
- */
-function activate_fr_custom_payment_gateway_icon_for_woocommerce() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-fr-custom-payment-gateway-icon-for-woocommerce-activator.php';
-	Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Activator::activate();
-}
-
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-fr-custom-payment-gateway-icon-for-woocommerce-deactivator.php
- */
-function deactivate_fr_custom_payment_gateway_icon_for_woocommerce() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-fr-custom-payment-gateway-icon-for-woocommerce-deactivator.php';
-	Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Deactivator::deactivate();
-}
-
-register_activation_hook( __FILE__, 'activate_fr_custom_payment_gateway_icon_for_woocommerce' );
-register_deactivation_hook( __FILE__, 'deactivate_fr_custom_payment_gateway_icon_for_woocommerce' );
-
-/**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
