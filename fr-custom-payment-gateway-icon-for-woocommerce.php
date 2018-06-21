@@ -8,13 +8,13 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://example.com
+ * @link              https://wordpress.org/plugins/fr-custom-payment-gateway-icon-for-woocommerce/
  * @since             1.0.0
  * @package           Fr_Custom_Payment_Gateway_Icon_For_WooCommerce
  *
  * @wordpress-plugin
  * Plugin Name:       Fr Custom Payment Gateway Icon for WooCommerce
- * Plugin URI:		  https://wordpress.org/plugins/fr-custom-payment-gateway-icon-for-woocommerce/
+ * Plugin URI:        https://wordpress.org/plugins/fr-custom-payment-gateway-icon-for-woocommerce/
  * Description:       Add or change payment gateway icons that appear on the WooCommerce checkout page.
  * Version:           1.0.1
  * Author:            Fahri Rusliyadi
@@ -23,6 +23,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       fr-custom-payment-gateway-icon-for-woocommerce
  * Domain Path:       /languages
+ * WC tested up to:   3.4.2
  */
 
 // If this file is called directly, abort.
