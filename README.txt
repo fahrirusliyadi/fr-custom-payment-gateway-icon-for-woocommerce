@@ -27,6 +27,9 @@ Add or change payment gateway icons that appear on the WooCommerce checkout page
 
 == Changelog ==
 
+= 1.0.2 =
+* Add compatibility with `woocommerce-gateway-amazon-payments-advanced` plugin.
+
 = 1.0.1 =
 * Clean up.
 

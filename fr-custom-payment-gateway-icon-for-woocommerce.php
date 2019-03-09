@@ -16,14 +16,14 @@
  * Plugin Name:       Fr Custom Payment Gateway Icon for WooCommerce
  * Plugin URI:        https://wordpress.org/plugins/fr-custom-payment-gateway-icon-for-woocommerce/
  * Description:       Add or change payment gateway icons that appear on the WooCommerce checkout page.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Fahri Rusliyadi
  * Author URI:        https://profiles.wordpress.org/fahrirusliyadi
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       fr-custom-payment-gateway-icon-for-woocommerce
  * Domain Path:       /languages
- * WC tested up to:   3.4.2
+ * WC tested up to:   3.5.6
  */
 
 // If this file is called directly, abort.
@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'FR_CUSTOM_PAYMENT_GATEWAY_ICON_FOR_WOOCOMMERCE_VERSION', '1.0.1' );
+define( 'FR_CUSTOM_PAYMENT_GATEWAY_ICON_FOR_WOOCOMMERCE_VERSION', '1.0.2' );
 
 /**
  * The core plugin class that is used to define internationalization,
