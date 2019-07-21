@@ -18,7 +18,7 @@ Add or change payment gateway icons that appear on the WooCommerce checkout page
 
 1. Upload `fr-custom-payment-gateway-icon-for-woocommerce` folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Go to 'WooCommerce' &rarr; 'Settings' &rarr; 'Checkout' &rarr; select the payment gateway you want change its icon &rarr; enter an image URL to the 'Icon' field.
+1. Go to *WooCommerce* &rarr; *Settings* &rarr; *Payments* &rarr; select the payment gateway you want change its icon &rarr; enter an image URL to the *Icon* field.
 
 == Screenshots ==
 
