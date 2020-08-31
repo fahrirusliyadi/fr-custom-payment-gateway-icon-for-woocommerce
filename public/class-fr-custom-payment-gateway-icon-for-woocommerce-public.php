@@ -54,37 +54,43 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Public {
 
 	}
         
-        /**
-         * Change the icon.
-         * 
-         * Hooked on `woocommerce_gateway_icon` filter.
-         * 
-         * @since 1.0.0
-         * 
-         * @param string $icon  Payment gateway icon image.
-         * @param string $id    Payment gateway ID.
-         * @return string
-         */
-        public function modify_icon($icon = '', $id = '') {
-            if (!$id) {
-                return $icon;
-            }
-            
-            $payment_gateways = WC()->payment_gateways()->payment_gateways();
-            
-            if (!isset($payment_gateways[$id])) {
-                return $icon;
-            }
-            
-            /* @var $payment_gateway WC_Payment_Gateway */
-            $payment_gateway    = $payment_gateways[$id]; 
-            $custom_icon        = $payment_gateway->get_option('fcpgifw_icon');
-            
-            if (!$custom_icon) {
-                return $icon;
-            }
-            
-            return '<img src="' . WC_HTTPS::force_https_url(esc_url($custom_icon)) . '" alt="' . esc_attr( $payment_gateway->get_title() ) . '" />';
+    /**
+     * Change the icon.
+     * 
+     * Hooked on `woocommerce_gateway_icon` filter.
+     * 
+     * @since 1.0.0
+     * 
+     * @param string $icon  Payment gateway icon image.
+     * @param string $id    Payment gateway ID.
+     * @return string
+     */
+    public function modify_icon($icon = '', $id = '') {
+        if (!$id) {
+            return $icon;
         }
+        
+        $payment_gateways = WC()->payment_gateways()->payment_gateways();
+        
+        if (!isset($payment_gateways[$id])) {
+            return $icon;
+        }
+        
+        /* @var $payment_gateway WC_Payment_Gateway */
+        $payment_gateway    = $payment_gateways[$id]; 
+        $custom_icon        = $payment_gateway->get_option('fcpgifw_icon');
+        $custom_icon_2x     = $payment_gateway->get_option('fcpgifw_icon_2x');
+        
+        if (!$custom_icon) {
+            return $icon;
+        }
+
+        $img_src = WC_HTTPS::force_https_url(esc_url($custom_icon));
+        $img_src_2x = $custom_icon_2x ? WC_HTTPS::force_https_url(esc_url($custom_icon_2x)) : '';
+        $img_alt = esc_attr($payment_gateway->get_title());
+        $img_srcset = $img_src_2x ? "srcset=\"$img_src, $img_src_2x 2x\"" : '';
+        
+        return "<img src=\"$img_src\" alt=\"$img_alt\" $img_srcset />";
+    }
 
 }

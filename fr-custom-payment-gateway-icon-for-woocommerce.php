@@ -23,7 +23,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       fr-custom-payment-gateway-icon-for-woocommerce
  * Domain Path:       /languages
- * WC tested up to:   3.7.0
+ * WC tested up to:   4.4.1
  */
 
 // If this file is called directly, abort.
