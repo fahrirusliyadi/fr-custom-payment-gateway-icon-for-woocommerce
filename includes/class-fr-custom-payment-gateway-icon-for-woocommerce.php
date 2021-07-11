@@ -148,14 +148,16 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce {
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
-		$plugin_admin = new Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Admin( $this->get_plugin_name(), $this->get_version() );
-        
-        // woocommerce-gateway-amazon-payments-advanced:1.9.0 wait until init 10 to hook
-        // to `woocommerce_payment_gateways` filter.
-        //
-        // So, priority 10 will be to early and we'll not be able to add our custom setting
-        // field.
-        $this->loader->add_action('init', $plugin_admin, 'hook_form_fields_modifier', 20);
+		if (is_admin()) {
+			$plugin_admin = new Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Admin( $this->get_plugin_name(), $this->get_version() );
+			
+			// woocommerce-gateway-amazon-payments-advanced:1.9.0 wait until init 10 to hook
+			// to `woocommerce_payment_gateways` filter.
+			//
+			// So, priority 10 will be to early and we'll not be able to add our custom setting
+			// field.
+			$this->loader->add_action('init', $plugin_admin, 'hook_form_fields_modifier', 20);
+		}
 	}
 
 	/**
@@ -166,11 +168,11 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce {
 	 * @access   private
 	 */
 	private function define_public_hooks() {
-
-		$plugin_public = new Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Public( $this->get_plugin_name(), $this->get_version() );
-                
-                $this->loader->add_filter('woocommerce_gateway_icon', $plugin_public, 'modify_icon', 20, 2);
-
+		if (!is_admin()) {
+			$plugin_public = new Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Public( $this->get_plugin_name(), $this->get_version() );
+					
+			$this->loader->add_filter('woocommerce_gateway_icon', $plugin_public, 'modify_icon', 20, 2);
+		}
 	}
 
 	/**
