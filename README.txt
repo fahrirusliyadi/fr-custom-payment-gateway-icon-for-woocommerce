@@ -3,8 +3,8 @@ Contributors: fahrirusliyadi
 Donate link: https://paypal.me/FahriRusliyadi
 Tags: woocommerce, payment-gateway, icon
 Requires at least: 4.4
-Tested up to: 5.7
-Stable tag: 1.1.0
+Tested up to: 5.8
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ Add or change payment gateway icons that appear on the WooCommerce checkout page
 2. The icons are displayed next to the payment gateway's name
 
 == Changelog ==
+
+= 1.1.1 =
+* Add compatibility with `big-fish-payment-gateway-for-woocommerce` plugin.
 
 = 1.1.0 =
 * Add @2x icon. 
