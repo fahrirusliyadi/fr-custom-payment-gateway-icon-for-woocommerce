@@ -32,6 +32,13 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
+ * The full path and filename of this file.
+ *
+ * @since 1.1.2
+ */
+define( 'FR_CUSTOM_PAYMENT_GATEWAY_ICON_FOR_WOOCOMMERCE_FILE', __FILE__ );
+
+/**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.

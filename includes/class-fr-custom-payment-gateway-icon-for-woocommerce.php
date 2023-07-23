@@ -75,6 +75,7 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		$this->define_compat_hooks();
 
 	}
 
@@ -95,6 +96,11 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce {
 	 * @access   private
 	 */
 	private function load_dependencies() {
+
+		/**
+		 * The class responsible for providing compatibility with other plugins.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-fr-custom-payment-gateway-icon-for-woocommerce-compat.php';
 
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
@@ -173,6 +179,18 @@ class Fr_Custom_Payment_Gateway_Icon_For_WooCommerce {
 					
 			$this->loader->add_filter('woocommerce_gateway_icon', $plugin_public, 'modify_icon', 20, 2);
 		}
+	}
+
+	/**
+	 * Register all of the hooks related to the compatibility functionality.
+	 *
+	 * @since    1.1.2
+	 * @access   private
+	 */
+	private function define_compat_hooks() {
+		$plugin_compat = new Fr_Custom_Payment_Gateway_Icon_For_WooCommerce_Compat();
+					
+		$this->loader->add_action('before_woocommerce_init', $plugin_compat, 'custom_order_tables');
 	}
 
 	/**
